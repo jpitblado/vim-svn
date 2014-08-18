@@ -1,7 +1,7 @@
 " svn.vim -- Subversion control system mappings
 " Maintainer:	Jeff Pitblado <jpitblado@stata.com>
-" Last Change:	15aug2014
-" Version:	1.0.0
+" Last Change:	18aug2014
+" Version:	1.0.1
 
 if exists("g:loaded_svn_vim")
   finish
@@ -20,5 +20,6 @@ nnoremap <leader>sD :call svn#diff("", ".")<cr>
 nnoremap <leader>ss :call svn#status()<cr>
 
 nnoremap <leader>sa :!svn add %<cr>
+nnoremap <leader>sc :!svn commit %<cr>
 
 " end: svn.vim
