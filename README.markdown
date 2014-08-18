@@ -21,10 +21,10 @@ Documentation for the mappings and functions.
 Add support for other Subversion subcommands.
 Current support is:
 
-	*svn add*
-	*svn commit*
-	*svn diff*
-	*svn status*
+	svn add
+	svn commit
+	svn diff
+	svn status
 
 ## License
 
