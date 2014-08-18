@@ -11,7 +11,7 @@ If you do too, then you can use the following to install this plugin:
 
 ```
 cd ~/.vim/bundle
-git clone https://github.com/jpitblado/vim-svn.git stata
+git clone https://github.com/jpitblado/vim-svn.git
 ```
 
 ## Future plans
@@ -22,6 +22,7 @@ Add support for other Subversion subcommands.
 Current support is:
 
 	*svn add*
+	*svn commit*
 	*svn diff*
 	*svn status*
 
