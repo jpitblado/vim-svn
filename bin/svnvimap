@@ -1,0 +1,26 @@
+#!/bin/sh
+# svnvimap
+
+# check that ./ is a working subversion copy
+svn info . > /dev/null 2>&1
+if [ $? -ne 0 ]
+then
+	svn info .
+	exit 1
+fi
+
+echo "Generating map.vim..."
+
+# get starting revision
+rev=`svn log --quiet --stop-on-copy . \
+	| grep "^r[0-9]* |" \
+	| tail -1 \
+	| awk '{print $1}' \
+	| sed -e 's/^r//'`
+
+cat << EOF > map.vim
+nnoremap <leader>rd :call svn#diff("-r$rev", bufname("%"))<cr>
+nnoremap <leader>rD :call svn#diff("-r$rev", ".")<cr>
+EOF
+
+exit
