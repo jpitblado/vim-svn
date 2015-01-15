@@ -1,0 +1,12 @@
+svn-Add	svn.txt	/*svn-Add*
+svn-Bugs	svn.txt	/*svn-Bugs*
+svn-Changelog	svn.txt	/*svn-Changelog*
+svn-Commit	svn.txt	/*svn-Commit*
+svn-Contents	svn.txt	/*svn-Contents*
+svn-Diff	svn.txt	/*svn-Diff*
+svn-License	svn.txt	/*svn-License*
+svn-Log	svn.txt	/*svn-Log*
+svn-Mappings	svn.txt	/*svn-Mappings*
+svn-Status	svn.txt	/*svn-Status*
+svn-Usage	svn.txt	/*svn-Usage*
+svn.txt	svn.txt	/*svn.txt*

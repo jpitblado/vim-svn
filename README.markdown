@@ -24,6 +24,7 @@ Current support is:
 	svn add
 	svn commit
 	svn diff
+	svn log
 	svn status
 
 ## License

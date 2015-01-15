@@ -1,0 +1,92 @@
+*svn.txt* Vim plugin for working with Subversion
+
+Syntax and mappings for Subversion
+
+=============================================================================
+CONTENTS                                                       *svn-Contents*
+
+1. Usage				|svn-Usage|
+2. Mappings				|svn-Mappings|
+   2.1 Diff				   |svn-Diff|
+   2.2 Log				   |svn-Log|
+   2.3 Status				   |svn-Status|
+   2.4 Add				   |svn-Add|
+   2.5 Commit				   |svn-Commit|
+3. License				|svn-License|
+4. Bugs					|svn-Bugs|
+5. Changelog				|svn-Changelog|
+
+=============================================================================
+1. Usage                                                          *svn-Usage*
+
+This plugin provides convenience maps for editing files checked out from
+a subversion repository.
+
+=============================================================================
+2. Mappings                                                    *svn-Mappings*
+
+My most commonly used mappings.
+
+-----------------------------------------------------------------------------
+2.1 Diff                                                           *svn-Diff*
+
+Bound to: <localleader>sd
+	  <localleader>sD
+
+Split to a new or existing window filled with 'svn diff' results.
+The 'sd' map produces the diff for the file open in the current buffer.
+The 'sD' map produces the diff for the current working directory.
+
+-----------------------------------------------------------------------------
+2.2 Log                                                             *svn-Log*
+
+Bound to: <localleader>sl
+	  <localleader>sL
+
+Split to a new or existing window filled with 'svn log' results.
+The 'sl' map produces the log for the file open in the current buffer.
+The 'sL' map produces the log for the current working directory.
+
+-----------------------------------------------------------------------------
+2.3 Status                                                       *svn-Status*
+
+Bound to: <localleader>ss
+
+Read the results from 'svn status' into the current buffer.
+
+-----------------------------------------------------------------------------
+2.4 Add                                                             *svn-Add*
+
+Bound to: <localleader>sa
+
+Call 'svn add' for the file open in the current buffer.
+
+-----------------------------------------------------------------------------
+2.5 Commit                                                       *svn-Commit*
+
+Bound to: <localleader>sc
+
+Call 'svn commit' for the file open in the current buffer.
+
+=============================================================================
+3. License                                                      *svn-License*
+
+Same as Vim (see |license|).
+
+=============================================================================
+4. Bugs                                                            *svn-Bugs*
+
+If you find a bug, please let me know by posting it on the issue tracker:
+http://github.com/jpitblado/vim-svn/issues/
+
+=============================================================================
+5. Changelog                                                  *svn-Changelog*
+
+1.1.0
+	* added documentation
+	* added support for 'svn log'
+
+1.0.0
+	* Initial stable release on github.com
+
+=============================================================================

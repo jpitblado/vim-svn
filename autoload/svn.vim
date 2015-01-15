@@ -1,7 +1,7 @@
 " svn.vim -- Subversion control system mappings
 " Maintainer:	Jeff Pitblado <jpitblado@stata.com>
-" Last Change:	15aug2014
-" Version:	1.0.0
+" Last Change:	15jan2015
+" Version:	1.1.0
 
 if exists("g:autoloaded_svn_vim")
   finish
@@ -35,6 +35,31 @@ function! svn#diff (rev, file)
 	setlocal buftype=nofile
 
 	" insert diff output
+	call append(0, split(output, '\v\n'))
+	normal! gg
+endfunction
+
+" svn#log() -- Calls -svn log- and dumps the contents into a buffer named
+" __log_output__.
+
+function! svn#log (file)
+	let output = system(g:svn_command . " log --stop-on-copy --verbose " . a:file)
+	if v:shell_error
+		let output = bufname("%") . " NOT UNDER VERSION CONTROL"
+	endif
+
+	" open/setup a new split
+	if bufwinnr("__log_output__") == -1
+		split __log_output__
+	else
+		sbuffer __log_output__
+	endif
+
+	normal! ggdG
+	setlocal filetype=changelog
+	setlocal buftype=nofile
+
+	" insert log output
 	call append(0, split(output, '\v\n'))
 	normal! gg
 endfunction
