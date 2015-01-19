@@ -8,10 +8,11 @@ CONTENTS                                                       *svn-Contents*
 1. Usage				|svn-Usage|
 2. Mappings				|svn-Mappings|
    2.1 Diff				   |svn-Diff|
-   2.2 Log				   |svn-Log|
-   2.3 Status				   |svn-Status|
-   2.4 Add				   |svn-Add|
-   2.5 Commit				   |svn-Commit|
+   2.2 Branch origin diff		   |svn-Bdiff|
+   2.3 Log				   |svn-Log|
+   2.4 Status				   |svn-Status|
+   2.5 Add				   |svn-Add|
+   2.6 Commit				   |svn-Commit|
 3. License				|svn-License|
 4. Bugs					|svn-Bugs|
 5. Changelog				|svn-Changelog|
@@ -38,7 +39,19 @@ The 'sd' map produces the diff for the file open in the current buffer.
 The 'sD' map produces the diff for the current working directory.
 
 -----------------------------------------------------------------------------
-2.2 Log                                                             *svn-Log*
+2.2 Branch origin diff                                            *svn-Bdiff*
+
+Bound to: <localleader>sbd
+	  <localleader>sbD
+
+Split to a new or existing window filled with 'svn diff' results.
+The revision from which the 'svn diff' is made is computed by looking at the
+earliest revision in the 'svn log --stop-on-copy' for the file/directory.
+The 'sd' map produces the diff for the file open in the current buffer.
+The 'sD' map produces the diff for the current working directory.
+
+-----------------------------------------------------------------------------
+2.3 Log                                                             *svn-Log*
 
 Bound to: <localleader>sl
 	  <localleader>sL
@@ -48,21 +61,21 @@ The 'sl' map produces the log for the file open in the current buffer.
 The 'sL' map produces the log for the current working directory.
 
 -----------------------------------------------------------------------------
-2.3 Status                                                       *svn-Status*
+2.4 Status                                                       *svn-Status*
 
 Bound to: <localleader>ss
 
 Read the results from 'svn status' into the current buffer.
 
 -----------------------------------------------------------------------------
-2.4 Add                                                             *svn-Add*
+2.5 Add                                                             *svn-Add*
 
 Bound to: <localleader>sa
 
 Call 'svn add' for the file open in the current buffer.
 
 -----------------------------------------------------------------------------
-2.5 Commit                                                       *svn-Commit*
+2.6 Commit                                                       *svn-Commit*
 
 Bound to: <localleader>sc
 

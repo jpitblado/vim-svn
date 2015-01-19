@@ -1,7 +1,7 @@
 " svn.vim -- Subversion control system mappings
 " Maintainer:	Jeff Pitblado <jpitblado@stata.com>
-" Last Change:	15jan2015
-" Version:	1.1.0
+" Last Change:	19jan2015
+" Version:	1.1.1
 
 if exists("g:autoloaded_svn_vim")
   finish
@@ -18,7 +18,7 @@ endif
 " __diff_output__.
 
 function! svn#diff (rev, file)
-	let output = system(g:svn_command . " diff " . " " . a:rev . " " . a:file)
+	let output = system(g:svn_command . " diff " . a:rev . " " . a:file)
 	if v:shell_error
 		let output = bufname("%") . " NOT UNDER VERSION CONTROL"
 	endif
@@ -37,6 +37,18 @@ function! svn#diff (rev, file)
 	" insert diff output
 	call append(0, split(output, '\v\n'))
 	normal! gg
+endfunction
+
+" svn#bdiff() -- figures out the earliest revision when the specified file
+" existed, then calls svn#diff() using that revision.
+
+function! svn#bdiff (file)
+	let rev = system(g:svn_command . " log --quiet --stop-on-copy " .  a:file . " | grep '^r[0-9]* |' | tail -1 | awk '{printf $1}' | sed -e 's/^r/-r/'")
+	if v:shell_error
+		call svn#diff("", a:file)
+	else
+		call svn#diff(rev, a:file)
+	endif
 endfunction
 
 " svn#log() -- Calls -svn log- and dumps the contents into a buffer named
@@ -73,7 +85,7 @@ function! svn#status ()
 		let output = bufname("%") . " NOT UNDER VERSION CONTROL"
 	endif
 
-	" insert diff output
+	" insert status output
 	call append(line("."), split(output, '\v\n'))
 endfunction
 

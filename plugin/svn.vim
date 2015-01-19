@@ -1,7 +1,7 @@
 " svn.vim -- Subversion control system mappings
 " Maintainer:	Jeff Pitblado <jpitblado@stata.com>
-" Last Change:	15jan2015
-" Version:	1.1.0
+" Last Change:	19jan2015
+" Version:	1.1.1
 
 if exists("g:loaded_svn_vim")
   finish
@@ -16,6 +16,9 @@ endif
 
 nnoremap <leader>sd :call svn#diff("", bufname("%"))<cr>
 nnoremap <leader>sD :call svn#diff("", ".")<cr>
+
+nnoremap <leader>sbd :call svn#bdiff(bufname("%"))<cr>
+nnoremap <leader>sbD :call svn#bdiff(".")<cr>
 
 nnoremap <leader>sl :call svn#log(bufname("%"))<cr>
 nnoremap <leader>sL :call svn#log(".")<cr>

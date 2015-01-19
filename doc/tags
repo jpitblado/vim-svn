@@ -1,4 +1,5 @@
 svn-Add	svn.txt	/*svn-Add*
+svn-Bdiff	svn.txt	/*svn-Bdiff*
 svn-Bugs	svn.txt	/*svn-Bugs*
 svn-Changelog	svn.txt	/*svn-Changelog*
 svn-Commit	svn.txt	/*svn-Commit*
