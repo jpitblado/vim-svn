@@ -13,6 +13,7 @@ CONTENTS                                                       *svn-Contents*
    2.4 Status				   |svn-Status|
    2.5 Add				   |svn-Add|
    2.6 Commit				   |svn-Commit|
+   2.7 Info				   |svn-Info|
 3. License				|svn-License|
 4. Bugs					|svn-Bugs|
 5. Changelog				|svn-Changelog|
@@ -80,6 +81,13 @@ Call 'svn add' for the file open in the current buffer.
 Bound to: <localleader>sc
 
 Call 'svn commit' for the file open in the current buffer.
+
+-----------------------------------------------------------------------------
+2.7 Info                                                           *svn-Info*
+
+Bound to: <localleader>si
+
+Call 'svn info' for the file open in the current buffer.
 
 =============================================================================
 3. License                                                      *svn-License*
