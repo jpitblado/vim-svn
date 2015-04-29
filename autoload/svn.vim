@@ -1,7 +1,7 @@
 " svn.vim -- Subversion control system mappings
 " Maintainer:	Jeff Pitblado <jpitblado@stata.com>
-" Last Change:	19jan2015
-" Version:	1.1.1
+" Last Change:	29apr2015
+" Version:	1.1.2
 
 if exists("g:autoloaded_svn_vim")
   finish
@@ -43,11 +43,11 @@ endfunction
 " existed, then calls svn#diff() using that revision.
 
 function! svn#bdiff (file)
-	let rev = system(g:svn_command . " log --quiet --stop-on-copy " .  a:file . " | grep '^r[0-9]* |' | tail -1 | awk '{printf $1}' | sed -e 's/^r/-r/'")
+	let rev = system(g:svn_command . " log --quiet --stop-on-copy " .  a:file . " | grep '^r[0-9]* |' | tail -1 | awk '{printf $1}'")
 	if v:shell_error
 		call svn#diff("", a:file)
 	else
-		call svn#diff(rev, a:file)
+		call svn#diff("-" . rev, a:file)
 	endif
 endfunction
 
