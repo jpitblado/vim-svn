@@ -1,7 +1,7 @@
 " svn.vim -- Subversion control system mappings
 " Maintainer:	Jeff Pitblado <jpitblado@stata.com>
-" Last Change:	29apr2015
-" Version:	1.1.2
+" Last Change:	29mar2019
+" Version:	1.1.3
 
 if exists("g:autoloaded_svn_vim")
   finish
@@ -26,13 +26,13 @@ function! svn#diff (rev, file)
 	" open/setup a new split
 	if bufwinnr("__diff_output__") == -1
 		split __diff_output__
+		setlocal noswapfile
+		setlocal filetype=diff
+		setlocal buftype=nofile
 	else
 		sbuffer __diff_output__
+		normal! ggdG
 	endif
-
-	normal! ggdG
-	setlocal filetype=diff
-	setlocal buftype=nofile
 
 	" insert diff output
 	call append(0, split(output, '\v\n'))
