@@ -14,6 +14,8 @@ cd ~/.vim/bundle
 git clone https://github.com/jpitblado/vim-svn.git
 ```
 
+Also add `~/.vim/bundle/vim-svn/bin` to your path.
+
 ## Future plans
 
 Documentation for the mappings and functions.
